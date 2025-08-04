@@ -1,0 +1,12 @@
+{
+	"name": "xcode",
+	"description": "Cleans Xcode derived data and Swift Package Manager build cache",
+	"paths": [
+		"~/Library/Developer/Xcode/DerivedData",
+		"~/Library/Caches/org.swift.swiftpm"
+	],
+	"commands": [],
+	"processes": [
+		"Xcode"
+	]
+}

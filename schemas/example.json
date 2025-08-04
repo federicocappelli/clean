@@ -1,0 +1,13 @@
+{
+	"name": "The name of the entity to nuke, will be used as a paramter, example: ddgvpn",
+	"description": "The description of what we are nuking",
+	"paths": [
+		"/a/path/to/nuke"
+	],
+	"commands": [
+		"ls -la"
+	],
+	"processes": [
+	"the name of the process to terminate"
+	]
+}
