@@ -4,7 +4,6 @@
 	"paths": [
 		"/Applications/DEBUG",
 		"~/.Trash/*",
-		"~/.Trash/.*"
 	],
 	"commands": [],
 	"processes": []

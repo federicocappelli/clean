@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F140D3272E420BEF0086B82C /* nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140D3262E420BEF0086B82C /* nuke.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		F1F210662E1678CA002FD1FB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,16 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F140D3262E420BEF0086B82C /* nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nuke.swift; sourceTree = "<group>"; };
+		F140D3282E420BF10086B82C /* Nuke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nuke-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1F210682E1678CA002FD1FB /* Nuke */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nuke; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F1F2106A2E1678CA002FD1FB /* Nuke */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Nuke;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F1F210652E1678CA002FD1FB /* Frameworks */ = {
@@ -44,8 +42,9 @@
 		F1F2105F2E1678CA002FD1FB = {
 			isa = PBXGroup;
 			children = (
-				F1F2106A2E1678CA002FD1FB /* Nuke */,
+				F140D3262E420BEF0086B82C /* nuke.swift */,
 				F1F210692E1678CA002FD1FB /* Products */,
+				F140D3282E420BF10086B82C /* Nuke-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,9 +71,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				F1F2106A2E1678CA002FD1FB /* Nuke */,
-			);
 			name = Nuke;
 			packageProductDependencies = (
 			);
@@ -94,10 +90,11 @@
 				TargetAttributes = {
 					F1F210672E1678CA002FD1FB = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 					};
 				};
 			};
-			buildConfigurationList = F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "Nuke" */;
+			buildConfigurationList = F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "nuke" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,6 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F140D3272E420BEF0086B82C /* nuke.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,10 +248,13 @@
 		F1F210702E1678CA002FD1FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKE973VLUW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nuke-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -261,10 +262,12 @@
 		F1F210712E1678CA002FD1FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKE973VLUW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nuke-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -272,7 +275,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "Nuke" */ = {
+		F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "nuke" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1F2106D2E1678CA002FD1FB /* Debug */,

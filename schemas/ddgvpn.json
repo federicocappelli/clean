@@ -5,7 +5,6 @@
 		"/Applications/DEBUG",
 		"~/Library/Developer/Xcode/DerivedData/",
 		"~/.Trash/*",
-		"~/.Trash/.*"
 	],
 	"commands": [
 		"systemextensionsctl reset"
