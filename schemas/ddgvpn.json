@@ -3,7 +3,6 @@
 	"description": "Cleans up DuckDuckGo VPN configurations and related cached data",
 	"paths": [
 		"/Applications/DEBUG",
-		"~/Library/Developer/Xcode/DerivedData/",
 		"~/.Trash/*",
 	],
 	"commands": [
