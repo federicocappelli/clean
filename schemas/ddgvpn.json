@@ -1,0 +1,16 @@
+{
+	"name": "ddgvpn",
+	"description": "Cleans up DuckDuckGo VPN configurations and related cached data",
+	"paths": [
+		"/Applications/DEBUG",
+		"~/.Trash/*",
+	],
+	"commands": [
+		"systemextensionsctl reset"
+	],
+	"processes": [
+		"com.duckduckgo.macos.vpn",
+		"com.duckduckgo.macos.browser.network-protection.notifications",
+		"com.duckduckgo.mobile.ios.vpn.agent.debug"
+	]
+}

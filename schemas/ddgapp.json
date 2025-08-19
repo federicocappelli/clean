@@ -1,0 +1,10 @@
+{
+	"name": "ddgapp",
+	"description": "Cleans up DuckDuckGo App data, including preferences, cache, or sandbox",
+	"paths": [
+		"/Applications/DEBUG",
+		"~/.Trash/*",
+	],
+	"commands": [],
+	"processes": []
+}
