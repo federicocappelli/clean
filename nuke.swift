@@ -179,30 +179,48 @@ struct NukeApp {
     }
 
     func run(arguments: [String]) {
+        // Handle case where only schemas path is provided: -s <schemas_path>
+        if arguments.count == 3 && arguments[1] == "-s" {
+            let schemasPath = arguments[2]
+            let availableSchemas = parseAllSchemas(schemasPath: schemasPath)
+            
+            guard !availableSchemas.isEmpty else {
+                print("❌ No schemas found in path: \(schemasPath)")
+                exit(1)
+            }
+            
+            print("Available commands:")
+            availableSchemas.forEach { schema in
+                print("  \(schema.name) - \(schema.description)")
+            }
+            exit(0)
+        }
+        
         guard arguments.count > 3 else {
             print("""
-            Usage: nuke <command> -s <schemas_path> [--help]
+            Usage: nuke -s <schemas_path> <command> [--help]
+                   nuke -s <schemas_path>  (to list available commands)
 
             Arguments:
-              <command>         Command to execute
               -s <schemas_path> Path to schemas directory
+              <command>         Command to execute
 
-            Example:
-              nuke ddgapp -s ~/path/schemas
+            Examples:
+              nuke -s ~/path/schemas ddgapp
+              nuke -s ~/path/schemas
             """)
             exit(1)
         }
 
-        let command = arguments[1]
-
-        // Check for -s parameter
-        guard arguments.count >= 4 && arguments[2] == "-s" else {
+        // Check for -s parameter as first argument
+        guard arguments[1] == "-s" else {
             print("❌ Missing required -s parameter for schemas path")
-            print("Usage: nuke <command> -s <schemas_path> [--help]")
+            print("Usage: nuke -s <schemas_path> <command> [--help]")
             exit(1)
         }
 
-        let schemasPath = arguments[3]
+        let schemasPath = arguments[2]
+        let command = arguments[3]
         let extraArgs = Array(arguments.dropFirst(4))
 
         let availableSchemas = parseAllSchemas(schemasPath: schemasPath)
@@ -215,7 +233,9 @@ struct NukeApp {
         guard let schema = availableSchemas.first(where: { $0.name == command }) else {
             print("❓ Unknown command: \(command)")
             print("Available commands:")
-            availableSchemas.forEach { print("  \($0.name)") }
+            availableSchemas.forEach { schema in
+                print("  \(schema.name) - \(schema.description)")
+            }
             exit(1)
         }
 
