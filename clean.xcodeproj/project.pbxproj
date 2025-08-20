@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F140D3272E420BEF0086B82C /* nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140D3262E420BEF0086B82C /* nuke.swift */; };
+		F140D3272E420BEF0086B82C /* clean.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140D3262E420BEF0086B82C /* clean.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F140D3262E420BEF0086B82C /* nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nuke.swift; sourceTree = "<group>"; };
-		F1F210682E1678CA002FD1FB /* Nuke */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nuke; sourceTree = BUILT_PRODUCTS_DIR; };
+		F140D3262E420BEF0086B82C /* clean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clean.swift; sourceTree = "<group>"; };
+		F1F210682E1678CA002FD1FB /* Clean */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nuke; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		F1F2105F2E1678CA002FD1FB = {
 			isa = PBXGroup;
 			children = (
-				F140D3262E420BEF0086B82C /* nuke.swift */,
+				F140D3262E420BEF0086B82C /* clean.swift */,
 				F1F210692E1678CA002FD1FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,7 +49,7 @@
 		F1F210692E1678CA002FD1FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1F210682E1678CA002FD1FB /* Nuke */,
+				F1F210682E1678CA002FD1FB /* Clean */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +57,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F1F210672E1678CA002FD1FB /* Nuke */ = {
+		F1F210672E1678CA002FD1FB /* Clean */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1F2106F2E1678CA002FD1FB /* Build configuration list for PBXNativeTarget "Nuke" */;
+			buildConfigurationList = F1F2106F2E1678CA002FD1FB /* Build configuration list for PBXNativeTarget "Clean" */;
 			buildPhases = (
 				F1F210642E1678CA002FD1FB /* Sources */,
 				F1F210652E1678CA002FD1FB /* Frameworks */,
@@ -69,11 +69,11 @@
 			);
 			dependencies = (
 			);
-			name = Nuke;
+			name = Clean;
 			packageProductDependencies = (
 			);
-			productName = Nuke;
-			productReference = F1F210682E1678CA002FD1FB /* Nuke */;
+			productName = Clean;
+			productReference = F1F210682E1678CA002FD1FB /* Clean */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -92,7 +92,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "nuke" */;
+			buildConfigurationList = F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "clean" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -106,7 +106,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1F210672E1678CA002FD1FB /* Nuke */,
+				F1F210672E1678CA002FD1FB /* Clean */,
 			);
 		};
 /* End PBXProject section */
@@ -116,7 +116,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F140D3272E420BEF0086B82C /* nuke.swift in Sources */,
+				F140D3272E420BEF0086B82C /* clean.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +273,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "nuke" */ = {
+		F1F210632E1678CA002FD1FB /* Build configuration list for PBXProject "clean" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1F2106D2E1678CA002FD1FB /* Debug */,
@@ -282,7 +282,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1F2106F2E1678CA002FD1FB /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+		F1F2106F2E1678CA002FD1FB /* Build configuration list for PBXNativeTarget "Clean" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1F210702E1678CA002FD1FB /* Debug */,

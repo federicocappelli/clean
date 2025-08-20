@@ -1,13 +1,13 @@
 //
-//  nuke.swift
-//  Nuke
+//  clean.swift
+//  Clean
 //
 //  Created by Federico Cappelli on 03/07/2025.
 //
 
 import Foundation
 
-struct NukeTools {
+struct CleanTools {
     // MARK: - Tools
 
     // Execute a shell command
@@ -77,7 +77,7 @@ struct NukeTools {
     }
 }
 
-struct NukeApp {
+struct CleanApp {
 
     // MARK: - Schema
 
@@ -134,7 +134,7 @@ struct NukeApp {
     func executeSchema(_ schema: Schema, arguments: [String]) {
         if arguments.contains("--help") {
             print("""
-            Usage: nuke \(schema.name) [--help]
+            Usage: clean \(schema.name) [--help]
 
             \(schema.description)
             """)
@@ -148,12 +148,12 @@ struct NukeApp {
 
         // Terminate processes
         for process in schema.processes {
-            NukeTools.terminateProcess(matching: process)
+            CleanTools.terminateProcess(matching: process)
         }
 
         // Delete paths
         for path in schema.paths {
-            NukeTools.deleteFolder(path: path)
+            CleanTools.deleteFolder(path: path)
         }
 
         // Execute commands
@@ -162,11 +162,11 @@ struct NukeApp {
             if components.count >= 1 {
                 let cmd = String(components[0])
                 let args = components.count > 1 ? String(components[1]).split(separator: " ").map(String.init) : []
-                NukeTools.runCommand(cmd, arguments: args)
+                CleanTools.runCommand(cmd, arguments: args)
             }
         }
 
-        print("☢️  \(schema.name) nuked")
+        print("🧹 \(schema.name) cleaned")
     }
 
     func parseAllSchemas(schemasPath: String) -> [Schema] {
@@ -198,16 +198,16 @@ struct NukeApp {
         
         guard arguments.count > 3 else {
             print("""
-            Usage: nuke -s <schemas_path> <command> [--help]
-                   nuke -s <schemas_path>  (to list available commands)
+            Usage: clean -s <schemas_path> <command> [--help]
+                   clean -s <schemas_path>  (to list available commands)
 
             Arguments:
               -s <schemas_path> Path to schemas directory
               <command>         Command to execute
 
             Examples:
-              nuke -s ~/path/schemas ddgapp
-              nuke -s ~/path/schemas
+              clean -s ~/path/schemas ddgapp
+              clean -s ~/path/schemas
             """)
             exit(1)
         }
@@ -215,7 +215,7 @@ struct NukeApp {
         // Check for -s parameter as first argument
         guard arguments[1] == "-s" else {
             print("❌ Missing required -s parameter for schemas path")
-            print("Usage: nuke -s <schemas_path> <command> [--help]")
+            print("Usage: clean -s <schemas_path> <command> [--help]")
             exit(1)
         }
 
@@ -243,4 +243,4 @@ struct NukeApp {
     }
 }
 
-NukeApp().run(arguments: CommandLine.arguments)
+CleanApp().run(arguments: CommandLine.arguments)

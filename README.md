@@ -1,6 +1,6 @@
-# ☢️ Nuke
+# 🧹 Clean
 
-A Swift command-line utility for cleaning up development environments by executing schema-based cleanup tasks. Nuke allows you to define custom cleanup routines through JSON schemas that can terminate processes, delete files/folders, and run shell commands.
+A Swift command-line utility for cleaning up development environments by executing schema-based cleanup tasks. Clean allows you to define custom cleanup routines through JSON schemas that can terminate processes, delete files/folders, and run shell commands.
 
 ## Features
 
@@ -22,7 +22,7 @@ For easier usage, you can create a terminal alias to avoid typing the full path 
 
 ```bash
 # Add to your shell profile (~/.bashrc, ~/.zshrc, etc.)
-alias nuke='swift ~/Developer/nuke/nuke.swift -s ~/Developer/nuke/schemas/'
+alias clean='swift ~/Developer/clean/clean.swift -s ~/Developer/clean/schemas/'
 
 # Reload your shell or run:
 source ~/.zshrc  # or ~/.bashrc
@@ -31,17 +31,17 @@ source ~/.zshrc  # or ~/.bashrc
 After setting up the alias, you can use the shorter syntax:
 ```bash
 # List available commands
-nuke -s ./schemas
+clean -s ./schemas
 
 # Execute a specific command
-nuke -s ./schemas ddgvpn
+clean -s ./schemas ddgvpn
 ```
 
 ## Usage
 
 ```bash
-swift nuke.swift -s <schemas_path> <command> [--help]
-swift nuke.swift -s <schemas_path>  # List available commands
+swift clean.swift -s <schemas_path> <command> [--help]
+swift clean.swift -s <schemas_path>  # List available commands
 ```
 
 ### Arguments
@@ -54,19 +54,19 @@ swift nuke.swift -s <schemas_path>  # List available commands
 
 ```bash
 # List all available commands with descriptions
-swift nuke.swift -s ./schemas
+swift clean.swift -s ./schemas
 
 # Clean Xcode derived data and caches
-swift nuke.swift -s ./schemas xcode
+swift clean.swift -s ./schemas xcode
 
 # Clean DuckDuckGo app data
-swift nuke.swift -s ./schemas ddgapp
+swift clean.swift -s ./schemas ddgapp
 
 # Clean DuckDuckGo VPN data
-swift nuke.swift -s ./schemas ddgvpn
+swift clean.swift -s ./schemas ddgvpn
 
 # Show help for a specific command
-swift nuke.swift -s ./schemas xcode --help
+swift clean.swift -s ./schemas xcode --help
 ```
 
 ## Schema Format
@@ -138,8 +138,8 @@ Schemas are JSON files that define cleanup tasks. Each schema must have the foll
 ## Project Structure
 
 ```
-nuke/
-├── nuke.swift          # Main application source code
+clean/
+├── clean.swift          # Main application source code
 ├── schemas/            # Directory containing cleanup schemas
 │   ├── ddgapp.json    # DuckDuckGo app cleanup schema
 │   ├── ddgvpn.json    # DuckDuckGo VPN cleanup schema
@@ -149,13 +149,13 @@ nuke/
 
 ## Safety Features
 
-- **Process protection**: Prevents the nuke process from terminating itself
+- **Process protection**: Prevents the clean process from terminating itself
 - **Error handling**: Graceful error handling for file operations and process execution
 - **Confirmation**: Clear logging of all operations being performed
 
 ## How It Works
 
-1. **Schema loading**: Nuke loads all JSON schemas from the specified directory
+1. **Schema loading**: Clean loads all JSON schemas from the specified directory
 2. **Command matching**: Finds the schema matching the requested command name
 3. **Process termination**: Kills any processes matching the keywords in the `processes` array
 4. **File deletion**: Removes all paths specified in the `paths` array using `rm -rf`

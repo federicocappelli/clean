@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1F210672E1678CA002FD1FB"
-               BuildableName = "Nuke"
-               BlueprintName = "Nuke"
-               ReferencedContainer = "container:nuke.xcodeproj">
+               BuildableName = "Clean"
+               BlueprintName = "Clean"
+               ReferencedContainer = "container:clean.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -68,6 +68,15 @@
             ReferencedContainer = "container:nuke.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F1F210672E1678CA002FD1FB"
+            BuildableName = "Nuke"
+            BlueprintName = "Nuke"
+            ReferencedContainer = "container:nuke.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
